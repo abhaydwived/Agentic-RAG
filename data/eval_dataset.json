@@ -1,0 +1,48 @@
+[
+  {
+    "id": "eval_001",
+    "query": "What is our company's remote work and hybrid work policy?",
+    "domain": "internal_knowledge_base",
+    "target_doc": "employee_handbook.txt",
+    "expected_chunk_keywords": ["remote", "hybrid", "work", "days", "home"],
+    "ground_truth_answer": "Employees may work remotely up to two days per week with manager approval.",
+    "required_tools": ["search_knowledge_base"]
+  },
+  {
+    "id": "eval_002",
+    "query": "What was our Q3 annual revenue and target achievement?",
+    "domain": "internal_knowledge_base",
+    "target_doc": "financial_report.txt",
+    "expected_chunk_keywords": ["revenue", "q3", "target", "million", "growth"],
+    "ground_truth_answer": "Q3 revenue reached $18.5M surpassing the target of $17.0M.",
+    "required_tools": ["search_knowledge_base"]
+  },
+  {
+    "id": "eval_003",
+    "query": "What is the current stock price and trading volume for AAPL?",
+    "domain": "finance",
+    "target_doc": null,
+    "expected_chunk_keywords": ["price", "usd", "pe", "market"],
+    "ground_truth_answer": "AAPL stock price quote with market valuation.",
+    "required_tools": ["get_stock_data"]
+  },
+  {
+    "id": "eval_004",
+    "query": "What is the weather in London right now?",
+    "domain": "weather",
+    "target_doc": null,
+    "expected_chunk_keywords": ["weather", "temperature", "celsius", "london"],
+    "ground_truth_answer": "Current temperature and weather conditions for London.",
+    "required_tools": ["get_weather"]
+  },
+  {
+    "id": "eval_005",
+    "query": "What does Wikipedia say about transformer neural networks?",
+    "domain": "wikipedia",
+    "target_doc": null,
+    "expected_chunk_keywords": ["transformer", "attention", "neural", "deep learning"],
+    "ground_truth_answer": "Transformers are deep learning architectures relying on self-attention.",
+    "required_tools": ["search_wikipedia"]
+  }
+]
+

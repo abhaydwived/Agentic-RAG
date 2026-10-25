@@ -1,0 +1,9 @@
+{
+  "recall_at_k": 1.0,
+  "mean_reciprocal_rank": 1.0,
+  "context_relevance": 0.41,
+  "answer_faithfulness": 1.0,
+  "answer_relevance": 0.3017,
+  "average_latency_seconds": 9.8298,
+  "total_queries_evaluated": 5
+}
