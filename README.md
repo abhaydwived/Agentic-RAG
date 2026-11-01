@@ -245,8 +245,9 @@ Located in [`src/rag_pipeline.py`](src/rag_pipeline.py) and [`src/knowledge_inde
 
 ### Hybrid Retrieval (FAISS + BM25 via RRF)
 Combines dense semantic similarity and sparse keyword matching using **Reciprocal Rank Fusion (RRF)**:
-
+```math
 $$\text{RRF\_Score}(d) = \frac{0.60}{60 + \text{Rank}_{\text{dense}}(d)} + \frac{0.40}{60 + \text{Rank}_{\text{bm25}}(d)}$$
+```
 
 - **Dense Retriever:** Local `sentence-transformers/all-MiniLM-L6-v2` dense vectors via `FAISS`.
 - **Sparse Retriever:** Exact token match via `rank_bm25.BM25Okapi`.
