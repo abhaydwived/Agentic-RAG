@@ -55,3 +55,4 @@ data/knowledge_base/*.pdf
 *.swo
 .DS_Store
 Thumbs.db
+
