@@ -222,7 +222,7 @@ Agentic RAG/
 
 ## 6. Advanced RAG Pipeline
 
-Located in [`src/rag_pipeline.py`](file:///d:/Agentic%20RAG/src/rag_pipeline.py) and [`src/knowledge_indexer.py`](file:///d:/Agentic%20RAG/src/knowledge_indexer.py).
+Located in [`src/rag_pipeline.py`](src/rag_pipeline.py) and [`src/knowledge_indexer.py`](src/knowledge_indexer.py).
 
 ### Ingestion & Text Cleaning
 - **Directory Traversal:** Automatically indexes all `.pdf` and `.txt` files in `data/knowledge_base/`.
@@ -272,7 +272,7 @@ The application is powered by Google Gemini via `langchain-google-genai`:
 - **Solution:** In legacy architectures, a single query made 5 sequential LLM calls:
   $$\text{Query Understanding} \rightarrow \text{Intent Routing} \rightarrow \text{Context Evaluation} \rightarrow \text{Answer Generation} \rightarrow \text{Validation}$$
   This exhausted the daily quota in just 4 questions.
-- **Optimization:** We redesigned nodes in [`src/graph_nodes.py`](file:///d:/Agentic%20RAG/src/graph_nodes.py):
+- **Optimization:** We redesigned nodes in [`src/graph_nodes.py`](src/graph_nodes.py):
   - **Query Understanding:** Deterministic regex & follow-up resolver (**0 LLM calls**).
   - **Intent Classification:** Keyword/entity matching (**0 LLM calls**).
   - **Document Retrieval:** Local FAISS + BM25 (**0 LLM calls**).
@@ -284,7 +284,7 @@ The application is powered by Google Gemini via `langchain-google-genai`:
 
 ## 8. Tool-Calling Mechanism & Resilience
 
-Located in [`src/tool_executor.py`](file:///d:/Agentic%20RAG/src/tool_executor.py) and [`src/tool_registry.py`](file:///d:/Agentic%20RAG/src/tool_registry.py).
+Located in [`src/tool_executor.py`](src/tool_executor.py) and [`src/tool_registry.py`](src/tool_registry.py).
 
 - **Input Validation:** Rejects empty queries, script injection (`<script>`), URL schemes (`http://`), and oversized inputs.
 - **Transient Error Retry:** Automatically retries network socket drops with exponential backoff.
@@ -301,7 +301,7 @@ Located in [`src/tool_executor.py`](file:///d:/Agentic%20RAG/src/tool_executor.p
 
 ## 9. Conversation Memory & Session Isolation
 
-Located in [`src/session_manager.py`](file:///d:/Agentic%20RAG/src/session_manager.py).
+Located in [`src/session_manager.py`](src/session_manager.py).
 
 - Backed by LangGraph's native `MemorySaver` checkpointer.
 - Each user session has a unique `thread_id` UUID.
@@ -313,13 +313,13 @@ Located in [`src/session_manager.py`](file:///d:/Agentic%20RAG/src/session_manag
 
 ## 10. Observability, Evaluation & Benchmarking
 
-Located in [`src/evaluator.py`](file:///d:/Agentic%20RAG/src/evaluator.py), [`src/metrics.py`](file:///d:/Agentic%20RAG/src/metrics.py), and [`scripts/run_evaluation.py`](file:///d:/Agentic%20RAG/scripts/run_evaluation.py).
+Located in [`src/evaluator.py`](src/evaluator.py), [`src/metrics.py`](src/metrics.py), and [`scripts/run_evaluation.py`](scripts/run_evaluation.py).
 
 Tracks live execution metrics:
 - **Recall@K & MRR:** Measures retrieval coverage against `data/eval_dataset.json`.
 - **Context Relevance:** Measures the fraction of retrieved passages directly relevant to the query.
 - **Answer Faithfulness:** Detects hallucinations by verifying claims against retrieved document sentences.
-- **Latency & Tool Tracking:** [`src/tracer.py`](file:///d:/Agentic%20RAG/src/tracer.py) logs execution duration, tool names, and iteration counts.
+- **Latency & Tool Tracking:** [`src/tracer.py`](src/tracer.py) logs execution duration, tool names, and iteration counts.
 
 Run the reproducible benchmark:
 ```powershell
@@ -338,8 +338,8 @@ Run the reproducible benchmark:
 
 ```powershell
 # 1. Clone repository
-git clone https://github.com/techwithprateek/agenticai-projects.git
-cd "agenticai-projects/05-agentic-rag-realtime"
+git clone https://github.com/abhaydwived/Agentic-RAG
+cd "Agentic-RAG"
 
 # 2. Create virtual environment
 python -m venv .venv
